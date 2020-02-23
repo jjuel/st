@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Operator Mono:pixelsize=28:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -86,8 +86,9 @@ unsigned int tabspaces = 8;
 float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+/* Gruvbox Dark */
+/* static const char *colorname[] = {
+	"#282828", /\* hard contrast: #1d2021 / soft contrast: #32302f *\/
 	"#cc241d",
 	"#98971a",
 	"#d79921",
@@ -104,20 +105,45 @@ static const char *colorname[] = {
 	"#8ec07c",
 	"#ebdbb2",	
 	[255] = 0,
-	/* more colors can be added after 255 to use with DefaultXX */
-	"black", /* 256 -> bg */
-	"white", /* 257 -> fg */
-};
+	/\* more colors can be added after 255 to use with DefaultXX *\/
+	"black", /\* 256 -> bg *\/
+	"white", /\* 257 -> fg *\/
+}; */
 
+/* solarized light */
+static const char *colorname[] = {
+	"#073642",  /*  0: black    */
+	"#dc322f",  /*  1: red      */
+	"#859900",  /*  2: green    */
+	"#b58900",  /*  3: yellow   */
+	"#268bd2",  /*  4: blue     */
+	"#d33682",  /*  5: magenta  */
+	"#2aa198",  /*  6: cyan     */
+	"#eee8d5",  /*  7: white    */
+	"#002b36",  /*  8: brblack  */
+	"#cb4b16",  /*  9: brred    */
+	"#586e75",  /* 10: brgreen  */
+	"#657b83",  /* 11: bryellow */
+	"#839496",  /* 12: brblue   */
+	"#6c71c4",  /* 13: brmagenta*/
+	"#93a1a1",  /* 14: brcyan   */
+	"#fdf6e3",  /* 15: brwhite  */
+	[255] = 0,
+
+	"#fdf6e3", /* 256: background */
+	"#657b83", /* 257: foreground */
+	"#fdf6e3", /* 258: CrText     */
+	"#657b83", /* 259: CrBg       */
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 0;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 259;
+static unsigned int defaultrcs = 258;
 
 /*
  * Default shape of cursor
